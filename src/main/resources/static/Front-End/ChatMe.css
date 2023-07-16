@@ -1,6 +1,19 @@
+.body {
+    background-color: rgb(1, 141, 223);
+
+}
+
 .submitDiv{
-    margin-top: 5%;
-    padding: 50px 50px 50px 50px;
-    width: 500px;
-    background-color: rgb(255, 238, 183);
+    border-radius: 7px 7px;
+    background-color: aliceblue;
+    margin-top: 10%;
+    height: 300px;
+    padding: 40px 50px 50px 50px;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+}
+
+.submitDiv h5{
+    color: rgb(128, 128, 128);
+    margin-bottom: 5%;
+    
 }
