@@ -1,6 +1,7 @@
 .body {
     background-color: rgb(1, 141, 223);
-
+    height: 100%;
+    overflow: hidden;
 }
 
 .submitDiv{
@@ -15,5 +16,102 @@
 .submitDiv h5{
     color: rgb(128, 128, 128);
     margin-bottom: 5%;
+    
+}
+
+input {
+    padding-left: 10px;
+}
+/**=========================================*/
+
+
+
+
+#Contact-Section {
+    position: relative;
+    height: 100%;
+}
+
+.ChatDiv {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #fff;
+    margin-top: 10%;
+    height: calc(100% - 60px);
+    max-height: 600px;
+    position: relative;
+    padding: 20px 10px 30px 10px;
+    clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 100%, 81% 100%, 20% 100%, 0 100%, 0% 20%);
+
+}
+
+.ChatDiv h2 {
+    border-bottom: 1px solid rgb(1, 141, 223);
+    text-align: center;
+    padding: 15px;
+    color: rgb(1, 141, 223);
+}
+
+#Messages {
+    list-style-type: none;
+    background-color: #FFF;
+    margin: 0;
+    overflow: auto;
+    overflow-y: scroll;
+    padding: 2 15px 2px 15px;
+    height: calc(100% - 150px);
+}
+
+ #Contact_Form {
+    padding-top: 25px;
+}
+
+#Messages li {
+    border-bottom: 1px solid solid rgb(1, 141, 223);
+    line-height: 1.7rem;
+    padding: 10px 20px;
+    margin: 0;
+}
+
+
+
+
+.MessageInput {
+    float: left;
+    height: 45px;
+    width: calc(100% - 85px);
+}
+
+#SendBtn {
+    float: right;
+    width: 10%;
+    height: 45px;
+    margin-left: 3px;
+    border-radius: 0px 15px 15px 0px;
+
+}
+
+
+/*======================= Media Screen ===========================*/
+
+@media screen and (max-width: 730px) {
+
+    .ChatDiv {
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .ChatDiv {
+        height: calc(100% - 30px);
+    }
+
+    #Messages {
+        height: calc(100% - 120px);
+    }
+
     
 }
