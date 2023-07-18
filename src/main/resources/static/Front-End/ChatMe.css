@@ -3,16 +3,20 @@
  *
  * ------------------------------------------------------------------- 
  */
+:root {
+  --blue: rgb(1, 141, 223);
+  --white: #aliceblue;
+}
 
 .body {
-    background-color: rgb(1, 141, 223);
+    background-color: var(--blue);
     height: 100%;
     overflow: hidden;
 }
 
 .submitDiv{
     border-radius: 7px 7px;
-    background-color: aliceblue;
+    background-color: var(--white);
     margin-top: 10%;
     height: 300px;
     padding: 40px 50px 50px 50px;
@@ -41,11 +45,15 @@ input {
     height: 100%;
 }
 
+.hide{
+    display: none;
+}
+
 .ChatDiv {
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
-    background-color: #fff;
+    background-color: var(--white);
     margin-top: 10%;
     height: calc(100% - 60px);
     max-height: 600px;
@@ -56,15 +64,15 @@ input {
 }
 
 .ChatDiv h2 {
-    border-bottom: 1px solid rgb(1, 141, 223);
+    border-bottom: 1px solid var(--blue);
     text-align: center;
     padding: 15px;
-    color: rgb(1, 141, 223);
+    color: var(--blue);
 }
 
 #Messages {
     list-style-type: none;
-    background-color: #FFF;
+    background-color: var(--white);
     margin: 0;
     overflow: auto;
     overflow-y: scroll;
@@ -77,7 +85,7 @@ input {
 }
 
 #Messages li {
-    border-bottom: 1px solid solid rgb(1, 141, 223);
+    border-bottom: 1px solid solid var(--blue);
     line-height: 1.7rem;
     padding: 10px 20px;
     margin: 0;
@@ -126,17 +134,15 @@ input {
 }
 
  /*------------*/
-/* snow animation */
+/*========================== snow animation =================*/
 @import url('https://fonts.googleapis.com/css?family=Corben:700');
 
 
 .hero {
-	/*background-image: radial-gradient(50% 176%, #253854 80%, #061922 100%);
-	 min-height: 100vh;*/
+	
 	min-height: 30rem;
 	position: relative;
 	overflow: hidden;
-	/*display: flex;*/
 	justify-content: center;
 	align-content: center;
 	
@@ -145,8 +151,6 @@ input {
 
 .snow {
 	position: absolute;
-	/*min-width: 100vw;
-	min-height: 100vh;*/
 	height: 100%;
 	width: 100%;
 	top: 0;
