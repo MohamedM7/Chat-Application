@@ -129,9 +129,27 @@ input {
     #Messages {
         height: calc(100% - 120px);
     }
-
-    
 }
+
+footer{
+    margin-left: 35%;
+    position: fixed;
+    bottom: 0;
+    height: 30px;
+    width: 30%;
+    background-color: rgb(200, 242, 253);
+    border-radius :50px 50px 0px 0px;
+    padding: 2px 15px 2px 15px;
+
+}
+
+.footerDiv{
+    font-size: 1.2rem;
+
+}
+
+
+
 
  /*------------*/
 /*========================== snow animation =================*/
@@ -155,7 +173,9 @@ input {
 	width: 100%;
 	top: 0;
 	left: 0;
+    
 }
+
 
 .snow .svg {
 	position: absolute;
@@ -164,10 +184,12 @@ input {
 }
 
 #snow-top-layer {
+    
 	will-change: transform;
 	transform: translateY(-768px);
 	animation: fall 22.5s infinite linear;
 }
+
 
 #snow-bottom-layer {
 	will-change: transform;
@@ -182,4 +204,4 @@ input {
 	}
 	
 }
-/*end snow animation*/
+/*================== End snow animation ===========*/
