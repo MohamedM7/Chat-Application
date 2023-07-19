@@ -136,17 +136,20 @@ footer{
     position: fixed;
     bottom: 0;
     height: 30px;
-    width: 30%;
+    width: 28%;
     background-color: rgb(200, 242, 253);
     border-radius :50px 50px 0px 0px;
-    padding: 2px 15px 2px 15px;
-
-}
-
-.footerDiv{
+    padding: 2px 15px 2px 25px;
     font-size: 1.2rem;
-
+    
 }
+
+footer a svg{
+    margin-left: 22px;
+    text-decoration: none;
+}
+
+
 
 
 
