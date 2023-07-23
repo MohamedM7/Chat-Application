@@ -13,8 +13,8 @@ function connect(event) {
     UserName = document.querySelector('#name').value.trim();
 
     if(UserNamesername) {
-        SubmitDiv.classList.add('hidden');
-        ContactSection.classList.remove('hidden');
+        SubmitDiv.classList.add('hide');
+        ContactSection.classList.remove('hide');
 
         var socket = new SockJS('/ws');
         stompClient = Stomp.over(socket);
@@ -39,12 +39,32 @@ function BeConnected() {
 
 
 }
+var MessageInput = document.getElementById('MessageInput');
 
 function SendMessage(e){
+    var message = MessageInput.value.trim();
+    if(message && stompClient) {
+        var chatMessage = {
+            sender: UserName,
+            content: MessageInput.value,
+            type: 'CHAT'
+        };
+        stompClient.send("/app/chat.sendMessage", {}, JSON.stringify(chatMessage));
+        MessageInput.value = '';
+    }
+    e.preventDefault();
 
 }
 
 function ReceiveMessage(e){
+    
+    var message = JSON.parse(payload.body);
+    var li = document.createElement('li');
+
+    if(message.type === 'JOIN') {
+        li.classList.add('event-message');
+        message.content = message.sender + ' joined!';
+    }
 
 }
 

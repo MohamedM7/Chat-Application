@@ -92,12 +92,22 @@ input {
 }
 
 
-
-
 .MessageInput {
     float: left;
     height: 45px;
     width: calc(100% - 85px);
+}
+
+ .event-message {
+    width: 100%;
+    text-align: center;
+    clear: both;
+}
+
+ .event-message p {
+    color: #777;
+    font-size: 14px;
+    word-wrap: break-word;
 }
 
 #SendBtn {
