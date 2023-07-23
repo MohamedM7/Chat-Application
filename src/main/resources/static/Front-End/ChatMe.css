@@ -70,7 +70,7 @@ input {
     color: var(--blue);
 }
 
-#Messages {
+#MessagesUl {
     list-style-type: none;
     background-color: var(--white);
     margin: 0;
@@ -84,7 +84,7 @@ input {
     padding-top: 25px;
 }
 
-#Messages li {
+#MessagesUl li {
     border-bottom: 1px solid solid var(--blue);
     line-height: 1.7rem;
     padding: 10px 20px;
@@ -109,7 +109,40 @@ input {
     font-size: 14px;
     word-wrap: break-word;
 }
+/*=======================================================*/
 
+.ChatMSG {
+    padding-left: 68px;
+    position: relative;
+}
+
+.ChatMSG i {
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    overflow: hidden;
+    left: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 18px;
+    line-height: 42px;
+    color: #fff;
+    text-align: center;
+    border-radius: 50%;
+    font-style: normal;
+    text-transform: uppercase;
+}
+
+.ChatMSG span {
+    color: #333;
+    font-weight: 600;
+}
+
+.ChatMSG p {
+    color: #43464b;
+}
+
+/*=========================================================*/
 #SendBtn {
     float: right;
     width: 10%;
@@ -136,7 +169,7 @@ input {
         height: calc(100% - 30px);
     }
 
-    #Messages {
+    #MessagesUl {
         height: calc(100% - 120px);
     }
 }
