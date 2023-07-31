@@ -13,7 +13,7 @@ var UserName = null;
 function connect(event) {
     UserName = document.querySelector('#name').value.trim();
 
-    if(UserNamesername) {
+    if(UserName) {
         SubmitDiv.classList.add('hide');
         ContactSection.classList.remove('hide');
 
@@ -61,7 +61,7 @@ var messageArea = document.getElementById('MessagesUl');
 
 
 function ReceiveMessage(e){
-    
+
     var message = JSON.parse(payload.body);
     var li = document.createElement('li');
 

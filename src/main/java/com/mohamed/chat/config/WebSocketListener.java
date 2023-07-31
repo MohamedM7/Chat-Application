@@ -11,19 +11,19 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.socket.messaging.SessionDisconnectEvent;
 
 @Component
-@RequiredArgsConstructor
 @Slf4j
+@RequiredArgsConstructor
 public class WebSocketListener {
     private final SimpMessageSendingOperations message_template;
     @EventListener
     public void WebSocketDisconnectListener(SessionDisconnectEvent event){
         StompHeaderAccessor headerAccessor=StompHeaderAccessor.wrap(event.getMessage());// wrapping the event
-        String username= (String) headerAccessor.getSessionAttributes().get("username");
-        if(username !=null){
-            log.info("User Disconnect {}",username);
+        String UserName= (String) headerAccessor.getSessionAttributes().get("UserName");
+        if(UserName !=null){
+            log.info("User Disconnect {}",UserName);
              var chatMessage = ChatMessage.builder()  // Chat information's
                      .message_type(MessageType.LEAVE)
-                     .sender(username)
+                     .sender(UserName)
                      .build();
              message_template.convertAndSend("/topic/public",chatMessage); // the channel were everyone pass through
         }
