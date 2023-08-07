@@ -1,4 +1,4 @@
-package com.mohamed.chat;
+package com.mohamed.chat.ChatMe;
 import lombok.*;
 
 @Getter

@@ -1,4 +1,4 @@
-package com.mohamed.chat;
+package com.mohamed.chat.ChatMe;
 
 
 import org.springframework.messaging.handler.annotation.MessageMapping;
@@ -9,13 +9,13 @@ import org.springframework.stereotype.Controller;
 
 @Controller
 public class ChatController {
-    @MessageMapping("/chat.SendMessage")
+    @MessageMapping("/ChatMe.SendMessage")
     @SendTo("/topic/public") // each time the message is payload it will be sent to topic/public
     public ChatMessage SendMessage(@Payload ChatMessage chat_message ){
       return chat_message;
     }
 
-    @MessageMapping("/chat.AddUser")
+    @MessageMapping("/ChatMe.AddUser")
     @SendTo("/topic/public")
     public ChatMessage AddUser(@Payload ChatMessage chat_message, SimpMessageHeaderAccessor headerAccessor){
         headerAccessor.getSessionAttributes().put("UserName",chat_message.getSender());//Add username in websocket session

@@ -31,7 +31,7 @@ function BeConnected() {
     stompClient.subscribe('/topic/public', onMessageReceived);//=========== Add to the Public Topic
 
     // log username to the server
-    stompClient.send("/app/chat.addUser",    //=========== log username to the server
+    stompClient.send("/app/ChatMe.AddUser",    //=========== log username to the server
         {},
         JSON.stringify({sender: UserName, type: 'JOIN'})
     )
@@ -50,7 +50,7 @@ function SendMessage(e){
             content: MessageInput.value,
             type: 'CHAT'
         };
-        stompClient.send("/app/chat.SendMessage", {}, JSON.stringify(chatMessage));
+        stompClient.send("/app/ChatMe.SendMessage", {}, JSON.stringify(chatMessage));
         MessageInput.value = '';
     }
     e.preventDefault();
@@ -112,7 +112,7 @@ function GetColor(messageSender) {
     return colors[index];
 }
 
-var UserLoginForm = document.querySelector('#UserLginForm');
+var UserLoginForm = document.querySelector('#UserLoginForm');
 var Contact_Form = document.querySelector('#Contact_Form');
 
 

@@ -1,7 +1,7 @@
 package com.mohamed.chat.config;
 
-import com.mohamed.chat.ChatMessage;
-import com.mohamed.chat.MessageType;
+import com.mohamed.chat.ChatMe.ChatMessage;
+import com.mohamed.chat.ChatMe.MessageType;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.event.EventListener;
