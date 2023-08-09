@@ -1,7 +1,7 @@
 'use strict';
 
 var SubmitDiv = document.querySelector('#submitDiv');
-var ContactSection = document.querySelector('#Contact-Section');
+var ContactSection = document.querySelector('#ContactSection');
 
 
 
@@ -66,10 +66,10 @@ function ReceiveMessage(e){
     var li = document.createElement('li');
 
     if(message.type === 'JOIN') {
-        li.classList.add('event-message');
+        li.classList.add('EventMessage');
         message.content = message.sender + ' joined!';
     }else if (message.type === 'LEAVE') {
-        li.classList.add('event-message');
+        li.classList.add('EventMessage');
         message.content = message.sender + ' left!';
     } else {
         li.classList.add('ChatMSG');
@@ -113,7 +113,7 @@ function GetColor(messageSender) {
 }
 
 var UserLoginForm = document.querySelector('#UserLoginForm');
-var Contact_Form = document.querySelector('#Contact_Form');
+var Contact_Form = document.querySelector('#ContactForm');
 
 
 UserLoginForm.addEventListener('submit', connect, true)

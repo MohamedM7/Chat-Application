@@ -40,7 +40,7 @@ input {
 
 
 
-#Contact-Section {
+#ContactSection {
     position: relative;
     height: 100%;
 }
@@ -80,7 +80,7 @@ input {
     height: calc(100% - 150px);
 }
 
- #Contact_Form {
+ #ContactForm {
     padding-top: 25px;
 }
 
@@ -98,13 +98,13 @@ input {
     width: calc(100% - 85px);
 }
 
- .event-message {
+ .EventMessage {
     width: 100%;
     text-align: center;
     clear: both;
 }
 
- .event-message p {
+ .Event-Message p {
     color: #777;
     font-size: 14px;
     word-wrap: break-word;
