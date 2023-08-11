@@ -70,6 +70,15 @@ input {
     color: var(--blue);
 }
 
+.OnLine {
+    padding-top: 5px;
+    text-align: center;
+    color: #777;
+    position: absolute;
+    top: 65px;
+    width: 100%;
+}
+
 #MessagesUl {
     list-style-type: none;
     background-color: var(--white);
@@ -171,6 +180,10 @@ input {
 
     #MessagesUl {
         height: calc(100% - 120px);
+    }
+
+    .OnLine {
+            top: 60px;
     }
 }
 

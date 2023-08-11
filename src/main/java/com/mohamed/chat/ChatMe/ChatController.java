@@ -12,7 +12,9 @@ public class ChatController {
     @MessageMapping("/ChatMe.SendMessage")
     @SendTo("/topic/public") // each time the message is payload it will be sent to topic/public
     public ChatMessage SendMessage(@Payload ChatMessage chat_message ){
+        System.out.println("++++++++---------+++++++++ "+chat_message);
       return chat_message;
+
     }
 
     @MessageMapping("/ChatMe.AddUser")

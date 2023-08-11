@@ -2,6 +2,8 @@
 
 var SubmitDiv = document.querySelector('#submitDiv');
 var ContactSection = document.querySelector('#ContactSection');
+var MessageInput = document.querySelector('#MessageInput');
+
 
 
 
@@ -25,10 +27,10 @@ function connect(event) {
     event.preventDefault();
 }
 
-
+var connectingElement = document.querySelector('.OnLine');
 function BeConnected() {
 
-    stompClient.subscribe('/topic/public', onMessageReceived);//=========== Add to the Public Topic
+    stompClient.subscribe('/topic/public', ReceiveMessage);//=========== Add to the Public Topic
 
     // log username to the server
     stompClient.send("/app/ChatMe.AddUser",    //=========== log username to the server
@@ -37,32 +39,38 @@ function BeConnected() {
     )
 
     connectingElement.classList.add('hide');
-
-
 }
-var MessageInput = document.getElementById('MessageInput');
 
-function SendMessage(e){
-    var message = MessageInput.value.trim();
-    if(message && stompClient) {
+function IfError(e){
+    connectingElement.textContent = '- PRESS F5 - failed to connect to the WebSocket ';
+    connectingElement.style.color = 'red';
+}
+
+function SendMessage(event){
+    var MessageObject = MessageInput.value.trim();
+
+    if(MessageObject && stompClient) {
         var chatMessage = {
             sender: UserName,
             content: MessageInput.value,
             type: 'CHAT'
         };
         stompClient.send("/app/ChatMe.SendMessage", {}, JSON.stringify(chatMessage));
+            console.log("ChatMessage.content======================== = "+chatMessage.content);
+
         MessageInput.value = '';
     }
-    e.preventDefault();
+    event.preventDefault();
 
 }
 
 var messageArea = document.getElementById('MessagesUl');
 
 
-function ReceiveMessage(e){
+function ReceiveMessage(payload){
 
     var message = JSON.parse(payload.body);
+    console.log("hiiiii iam there  "+payload.body);
     var li = document.createElement('li');
 
     if(message.type === 'JOIN') {
@@ -88,7 +96,8 @@ function ReceiveMessage(e){
     }
 
     var textElement = document.createElement('p');
-    var messageText = document.createTextNode(message.content);
+    var messageText = document.createTextNode(message.content);/* modifide */
+    console.log("++++++++++++ "+message.content);
     textElement.appendChild(messageText);
 
     li.appendChild(textElement);
@@ -119,9 +128,6 @@ var Contact_Form = document.querySelector('#ContactForm');
 UserLoginForm.addEventListener('submit', connect, true)
 Contact_Form.addEventListener('submit', SendMessage, true)
 
-function IfError(e){
-    connectingElement.textContent = '- PRESS F5 - failed to connect to the WebSocket ';
-    connectingElement.style.color = 'red';
-}
+
 
 
