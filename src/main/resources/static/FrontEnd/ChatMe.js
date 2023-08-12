@@ -35,7 +35,7 @@ function BeConnected() {
     // log username to the server
     stompClient.send("/app/ChatMe.AddUser",    //=========== log username to the server
         {},
-        JSON.stringify({sender: UserName, type: 'JOIN'})
+        JSON.stringify({sender: UserName, message_type: 'JOIN'})
     )
 
     connectingElement.classList.add('hide');
@@ -52,11 +52,11 @@ function SendMessage(event){
     if(MessageObject && stompClient) {
         var chatMessage = {
             sender: UserName,
-            content: MessageInput.value,
-            type: 'CHAT'
+            message: MessageObject,
+            message_type: 'CHAT'
         };
         stompClient.send("/app/ChatMe.SendMessage", {}, JSON.stringify(chatMessage));
-            console.log("ChatMessage.content======================== = "+chatMessage.content);
+            console.log("MessageObject.message ========================= "+chatMessage.message);
 
         MessageInput.value = '';
     }
@@ -73,12 +73,12 @@ function ReceiveMessage(payload){
     console.log("hiiiii iam there  "+payload.body);
     var li = document.createElement('li');
 
-    if(message.type === 'JOIN') {
+    if(message.message_type === 'JOIN') {
         li.classList.add('EventMessage');
-        message.content = message.sender + ' joined!';
-    }else if (message.type === 'LEAVE') {
+        message.message = message.sender + ' is Online';
+    }else if (message.message_type === 'LEAVE') {
         li.classList.add('EventMessage');
-        message.content = message.sender + ' left!';
+        message.message = message.sender + ' Disconnected';
     } else {
         li.classList.add('ChatMSG');
 
@@ -96,8 +96,8 @@ function ReceiveMessage(payload){
     }
 
     var textElement = document.createElement('p');
-    var messageText = document.createTextNode(message.content);/* modifide */
-    console.log("++++++++++++ "+message.content);
+    var messageText = document.createTextNode(message.message);/* modifide */
+    console.log("++++++++++++ "+message.message);
     textElement.appendChild(messageText);
 
     li.appendChild(textElement);

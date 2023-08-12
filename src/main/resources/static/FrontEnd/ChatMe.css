@@ -111,12 +111,14 @@ input {
     width: 100%;
     text-align: center;
     clear: both;
+
 }
 
- .Event-Message p {
+ .EventMessage p {
     color: #777;
     font-size: 14px;
     word-wrap: break-word;
+
 }
 /*=======================================================*/
 
@@ -127,10 +129,10 @@ input {
 
 .ChatMSG i {
     position: absolute;
-    width: 42px;
-    height: 42px;
+    width: 35px;
+    height: 35px;
     overflow: hidden;
-    left: 10px;
+    left: 3px;
     display: inline-block;
     vertical-align: middle;
     font-size: 18px;
@@ -140,15 +142,18 @@ input {
     border-radius: 50%;
     font-style: normal;
     text-transform: uppercase;
+
 }
 
 .ChatMSG span {
+margin-left:17px;
     color: #333;
     font-weight: 600;
 }
 
 .ChatMSG p {
     color: #43464b;
+    margin-left:17px;
 }
 
 /*=========================================================*/

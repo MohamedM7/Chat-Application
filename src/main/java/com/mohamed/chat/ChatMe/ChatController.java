@@ -11,17 +11,16 @@ import org.springframework.stereotype.Controller;
 public class ChatController {
     @MessageMapping("/ChatMe.SendMessage")
     @SendTo("/topic/public") // each time the message is payload it will be sent to topic/public
-    public ChatMessage SendMessage(@Payload ChatMessage chat_message ){
-        System.out.println("++++++++---------+++++++++ "+chat_message);
-      return chat_message;
+    public ChatMessage SendMessage(@Payload ChatMessage chatMessage ){
+      return chatMessage;
 
     }
 
     @MessageMapping("/ChatMe.AddUser")
     @SendTo("/topic/public")
-    public ChatMessage AddUser(@Payload ChatMessage chat_message, SimpMessageHeaderAccessor headerAccessor){
-        headerAccessor.getSessionAttributes().put("UserName",chat_message.getSender());//Add username in websocket session
-        return chat_message;
+    public ChatMessage AddUser(@Payload ChatMessage chatMessage, SimpMessageHeaderAccessor headerAccessor){
+        headerAccessor.getSessionAttributes().put("UserName",chatMessage.getSender());//Add username in websocket session
+        return chatMessage;
 
     }
 
