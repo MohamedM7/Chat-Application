@@ -91,6 +91,7 @@ function ReceiveMessage(payload){
 
         var usernameElement = document.createElement('span');
         var usernameText = document.createTextNode(message.sender);
+
         usernameElement.appendChild(usernameText);
         li.appendChild(usernameElement);
     }
