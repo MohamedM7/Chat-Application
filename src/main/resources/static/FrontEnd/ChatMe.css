@@ -115,7 +115,7 @@ input {
 }
 
  .EventMessage p {
-    color:var(--blue);
+    color:#4CBB17;
     font-size: 14px;
     word-wrap: break-word;
 
@@ -147,7 +147,7 @@ input {
 }
 
 .ChatMSG span {
-margin-left:17px;
+margin-left:22px;
     color: #333;
     font-weight: 600;
 
@@ -156,7 +156,6 @@ margin-left:17px;
 .ChatMSG p {
     color: #43464b;
     margin-left:17px;
-     background-color: var(--blue);
 }
 
 /*=========================================================*/
