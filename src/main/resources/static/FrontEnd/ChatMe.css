@@ -120,6 +120,21 @@ input {
     word-wrap: break-word;
 
 }
+
+/*=========================================*/
+.EventMessageLeave {
+    width: 100%;
+    text-align: center;
+    clear: both;
+
+}
+
+ .EventMessageLeave p {
+    color:#ff0000;
+    font-size: 14px;
+    word-wrap: break-word;
+
+}
 /*=======================================================*/
 
 .ChatMSG {
